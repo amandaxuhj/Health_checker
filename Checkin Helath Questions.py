@@ -19,10 +19,12 @@ def health_checkin()->str:
             CIQ = CIQ + 1
 
     total = len(Responses)
+
     print("Your score is: ",total,"/5")
     print("You're doing a great job!Please take time to care for your body and health!")
+
     
         
-
+#silly change
 
 health_checkin()
