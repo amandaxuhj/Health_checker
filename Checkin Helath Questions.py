@@ -20,6 +20,7 @@ def health_checkin()->str:
 
     total = len(Responses)
     print("Your score is: ",total,"/3")
+    print("You are beautiful!")
     
         
 
