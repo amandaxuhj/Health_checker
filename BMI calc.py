@@ -1,5 +1,5 @@
 """ BMI calculator is part of the function of the health program. """
-import math
+import math # do we still need this??
 
 
 def BMI_calculator()->float:
@@ -21,7 +21,4 @@ def BMI_calculator()->float:
         print("you are in the overweight range.")
     elif BMI_value > 29.9:
         print("You are in the obeisity range.")
-
-
-BMI_calculator() 
 
