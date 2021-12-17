@@ -7,7 +7,7 @@ def BMI_calculator()->float:
     
     print("Welcome to the BMI(Body Mass Index) calculator! BMI values are derived from a person's height and weight and indicates whether you are underweight, orverweight,or in the healthy range.")
     height = float(input("please put in your height in inches: "))
-    weight = float(input("please put in your weight in poounds: "))
+    weight = float(input("please put in your weight in pounds: "))
     BMI_value =(weight/((height)*(height)))*703
     print("Your BMI value is", BMI_value)
 
