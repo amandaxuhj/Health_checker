@@ -176,15 +176,20 @@ def get_help()-> str:
     if question == "Y" or question == "y":
         print("Welcome back! :)")
         screener()
-        run_aid()
-    elif question == "N" or question == "n":
-        screener()
-        # should we just display the menu and then other times we can ask
         question_two = input("\nWould you like to see our Menu? Y or N: ")
         if question_two == "Y" or question_two == "y":
             menu()
             run_aid()
         elif question_two == "N" or question_two == "n":
+            run_aid()
+    elif question == "N" or question == "n":
+        screener()
+        # should we just display the menu and then other times we can ask
+        question_three = input("\nWould you like to see our Menu? Y or N: ")
+        if question_three == "Y" or question_three == "y":
+            menu()
+            run_aid()
+        elif question_three == "N" or question_three == "n":
             run_aid()
     final_question = input("\nIs that all for today? Y or N: ")
     if final_question == "Y" or final_question == "y":
