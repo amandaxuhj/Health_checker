@@ -14,11 +14,17 @@ def water()->str:
     question_two = int(input("How much water have you had today: "))
     if question == "O" or question == "o":
         wtotaltrue = water_needed()
-        print("You have",wtotaltrue - question_two,"ounces left to drink today.")
+        if wtotaltrue <= 0:
+            print("You have already drank the recommended ounces of water for today!")
+        else:
+            print("You have",wtotaltrue - question_two,"ounces left to drink today.")
     elif question == "C" or question == "c":
         wtotal = water_needed()
         wtotaltrue = wtotal/8
-        print("You have",wtotaltrue - question_two, "cups left to drink today.")
+        if wtotaltrue < 0:
+            print("You have already drank the recommended cups of water for today!")
+        else:
+            print("You have",wtotaltrue - question_two, "cups left to drink today.")
 
 def water_needed()->float:
     # Calculates the proper water intake needed depending on the users weight
@@ -188,5 +194,10 @@ def get_help()-> None:
     elif final_question == "N" or final_question == "n":
         print("This is filler for now")
         # need to enter something here
+
+
+get_help()
+
+
 
 
