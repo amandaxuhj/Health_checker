@@ -1,6 +1,7 @@
 # The Patient_info is defined in main so don't test till you get there
 
-def water()->:
+def water()->str:
+    # Tells the user how much water they have left to drink to reach their recommended water intake
     question = input("Do you want to use ounces or cups? O or C: ")
     question_two = input("How much water have you had today: ")
     if question == "O" or question == "o":
@@ -12,6 +13,8 @@ def water()->:
         print("You have",wtotaltrue - question_two, "cups left to drink today.")
 
 def water_needed()->int:
+    # Calculates the proper water intake needed depending on the users weight
+    # This is a helper function so it then returns the correct number back to whichever function called it
     water_wei = Patient_info[3]/2.2
     if Patient_info[0] < 30:
         product = water_wei * 40
@@ -26,25 +29,26 @@ def water_needed()->int:
         finalnum = product / 28.3
         return finalnum
     
-def targets()->:
+def targets()->str:
+    # This functions informs the user of milestones we are giving them and basing all our recommendations on
     print("Here are your targets that we are basing all our recommendations on:")
     print(" ")
 
     water = water_needed()
-    print("Recommended water intake: ", water)
-    print("Recommended calorie intake: ")
+    print("Recommended water intake: ", water,"ounces of water")
+    print("Recommended calorie intake: ") # Need to change this for the BMI Change
     print(" *For clarification this is the number of calories needed to maintain your current weight")
-    
-    print("Recommended hours of sleep: ")
-    print("")# Do we have any others??
+    target_sleep()
+    # Do we have any others?? If so add this
 
-def tsleep()->:
-    # I don't see the need for a function so I might just put this in the target function
+def target_sleep()->:
+    # Calculates the proper amount of sleep depending on the users age
+    # This is a helper function that runs when called
     if Patient_info[0] >= 6 and Patient_info[0] <= 12:
-        print("Recommended hours of sleep: 9-12")
+        print("Recommended hours of sleep: 9-12 hours")
     elif Patient_info[0] >= 13 and Patient_info[0] <= 18:
-        print("Recommended hours of sleep: 8-10")
+        print("Recommended hours of sleep: 8-10 hours")
     elif Patient_info[0] > 18 and Patient_info[0] <= 65:
-        print("Recommended hours of sleep: 8+")
+        print("Recommended hours of sleep: 8+ hours")
     elif Patient_info[0] > 65:
-        print("Recommended hours of sleep: 7-8")
+        print("Recommended hours of sleep: 7-8 hours")
