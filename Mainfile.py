@@ -185,41 +185,6 @@ def target_sleep()->str:
     elif Patient_info[0] > 65:
         print("Recommended hours of sleep: 7-8 hours")
 
-def check_in()->str:
-    print("Welcome to daily health check-in section! Please answer the following questions by typing Y(yes) or N(no):")
-
-    CIQ = 0
-    # AS of now there are 5 questions here to tally
-    Questions = ["Have you drank a cup of water today? ","Have you gotten at least 7 hours of sleep? ","Have you eaten a full meal today? ", "Have you worked out for at least one hour today? ", "Have you eaten some vegetables or fruit today? "]
-    Responses = []
-    q_number = 0
-    while CIQ < 5: 
-        question = input(Questions[q_number])
-        if question == "Y": # Enter true
-            Responses.append(question)
-            q_number = q_number+1
-            CIQ = CIQ+1
-        elif question == "N": # Enter false
-            q_number = q_number+1
-            CIQ = CIQ + 1
-
-    point_total = len(Responses)
-    print("Your score is: ",point_total,"/5")
-    print(" ")
-    # Let's change this to my part of the code # Done/Did
-    
-    if point_total == 0:
-        print(":( Please do yourself a favor, take some time and get these things done! We believe in you!!")
-    elif point_total == 1 or point_total == 2:
-        print(":( We know you can do better, your body deserves better. Take some time and get on these things. We believe in you!!")
-    elif point_total == 3:
-        print("Good job on taking time for your health, but let's try and get those two other tasks in. We believe in you!!")
-    elif point_total == 4:
-        # I think this message is a bit long, let's try it out in text testing
-        print(":) Great Job!! You're doing great thigns for you health. Keep going and try to get in that one last thing. We believe in you!!")
-    elif point_total == 5:
-        print(":) YOU'RE DOING AMAZING!!! Keep up the great work!!")
-
 
 
 
@@ -313,7 +278,7 @@ def get_help_again()-> str:
         # need to enter something here
 
 
-def main_function()->None:
+def main()->None:
     # This is the main function that holds everything to run the entire program
     # It has a while loop so that it can go again until the user is done with it
     first_response = get_help()
@@ -328,5 +293,6 @@ def main_function()->None:
             elif second_response == True:
                 Need_help = True
         print("Have a good day! Come Again! :)")    
-
-main_function()
+        
+if __name__ == "__main__"
+    main()
