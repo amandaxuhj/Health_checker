@@ -49,11 +49,9 @@ def targets()->str:
     # This functions informs the user of milestones we are giving them and basing all our recommendations on
     print("Here are your targets that we are basing all our recommendations on:")
     print(" ")
-
     water = water_needed()
     print("Recommended water intake: ", water,"ounces of water")
     target_sleep()
-    # Do we have any others?? If so add this
 
 def target_sleep()->str:
     # Calculates the proper amount of sleep depending on the users age
@@ -77,17 +75,17 @@ def BMI_calculator()->float:
     #weight = float(input("please put in your weight in poounds: "))
     #BMI_value =(weight/((height)*(height)))*703
     BMI_value = (Patient_info[3]/((Patient_info[2])*(Patient_info[2])))*703
-    print("Your BMI value is", BMI_value)
+    print("Your BMI value is", round(BMI_value,2))
 
     """The second part of the BMI_calculator function compares the user's BMI values with the standard value range and gives feedback to the user."""
 
-    if BMI_value < 18.5:
+    if round(BMI_value,2) < 18.5:
         print("you are in the underweight range ")
-    elif BMI_value >= 18.5 and BMI_value < 24.9:
+    elif round(BMI_value,2) >= 18.5 and round(BMI_value,2) < 24.9:
         print("You are in the normal weight range!")
-    elif BMI_value >= 24.9 and BMI_value < 29.9:
+    elif round(BMI_value,2) >= 24.9 and round(BMI_value,2) < 29.9:
         print("you are in the overweight range.")
-    elif BMI_value > 29.9:
+    elif round(BMI_value,2) > 29.9:
         print("You are in the obeisity range.")
 
 
