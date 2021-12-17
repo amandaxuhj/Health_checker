@@ -7,7 +7,7 @@ def menu()-> str:
     ### This is the list of options available to the user
     print("Here is the list of things we can do for you and how to ask for them")
     print("* Calculate water intake - W")
-    print("* Calculate calorie intake - F")
+    print("* Calculate calorie intake - F") # change this to whatever it is related to BMI
     print("* Show your target goals - T ")
     print("* Health check ins - C") 
     print("* Give you affirmations - A")

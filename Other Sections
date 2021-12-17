@@ -1,3 +1,5 @@
+# The Patient_info is defined in main so don't test till you get there
+
 def water()->:
     question = input("Do you want to use ounces or cups? O or C: ")
     question_two = input("How much water have you had today: ")
