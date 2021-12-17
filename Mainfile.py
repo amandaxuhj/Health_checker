@@ -308,7 +308,9 @@ def get_help_again()-> str:
         # need to enter something here
 
 
-def main_function()->None:# might need to make another to be the main function
+def main_function()->None:
+    # This is the main function that holds everything to run the entire program
+    # It has a while loop so that it can go again until the user is done with it
     first_response = get_help()
     if first_response == False:
         print("Have a good day! Come Again! :)")
@@ -322,3 +324,4 @@ def main_function()->None:# might need to make another to be the main function
                 Need_help = True
         print("Have a good day! Come Again! :)")    
 
+main_function()
