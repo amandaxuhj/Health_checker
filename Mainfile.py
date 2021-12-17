@@ -322,3 +322,4 @@ def main_function()->None:# might need to make another to be the main function
                 Need_help = True
         print("Have a good day! Come Again! :)")    
 
+main_function()
