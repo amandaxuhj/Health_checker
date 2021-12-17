@@ -177,6 +177,7 @@ def get_help()-> str:
     question = input("Have you ever used our services before? Y or N: ")
     if question == "Y" or question == "y":
         print("Welcome back! :)")
+        screener()
         run_aid()
     elif question == "N" or question == "n":
         screener()
@@ -189,7 +190,7 @@ def get_help()-> str:
             run_aid()
     final_question = input("\nIs that all for today? Y or N: ")
     if final_question == "Y" or final_question == "y":
-        return False # is this how we can do it
+        return False
     elif final_question == "N" or final_question == "n":
         return True
 
@@ -224,7 +225,8 @@ def main()->None:
                 Need_help = False
             elif second_response == True:
                 Need_help = True
-        print("Have a good day! Come Again! :)")    
+        print("Have a good day! Come Again! :)")
+        Patient_info.clear()  
         
 if __name__ == "__main__"
     main()
