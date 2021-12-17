@@ -11,7 +11,7 @@ Patient_info = []
 def water()->str:
     # Tells the user how much water they have left to drink to reach their recommended water intake
     question = input("Do you want to use ounces or cups? O or C: ")
-    question_two = input("How much water have you had today: ")
+    question_two = int(input("How much water have you had today: "))
     if question == "O" or question == "o":
         wtotaltrue = water_needed()
         print("You have",wtotaltrue - question_two,"ounces left to drink today.")
@@ -20,7 +20,7 @@ def water()->str:
         wtotaltrue = wtotal/8
         print("You have",wtotaltrue - question_two, "cups left to drink today.")
 
-def water_needed()->int:
+def water_needed()->float:
     # Calculates the proper water intake needed depending on the users weight
     # This is a helper function so it then returns the correct number back to whichever function called it
     water_wei = Patient_info[3]/2.2
@@ -118,18 +118,16 @@ def check_in()->str:
     elif point_total == 5:
         print(":) YOU'RE DOING AMAZING!!! Keep up the great work!!")
 
+
 def affirmation()->str:
     Affirmation = ["Investing in your health is one of the best investments you can make.", "Please take time to care for your body and health!","A healthy body is always the result of healthy thoughts and feelings.", "Let's work towards a healthier lifestyle! Yout got this!"]
     print(Affirmation[random.randint(0,3)])    # Don't forget to enter content here
 
 
 
-
-
 def menu()-> str:
     ### This is the list of options available to the user
-    print(" ")
-    print("Here is the list of things we can do for you and how to ask for them")
+    print("\nHere is the list of things we can do for you and how to ask for them")
     print("* Calculate water intake - W")
     print("* Calculate BMI - B") # change this to whatever it is related to BMI
     print("* Show your target goals - T ")
@@ -138,6 +136,8 @@ def menu()-> str:
 
 def screener()->str:
     ### Theses are questions to add to the bank function for the rest of the personalised computations
+    print(" ")
+    print("We need to ask some screener questions about you so we can help :)")
     age = int(input("What is your age: "))
     Patient_info.append(age)
     print("What is your sex? Male or Female")
@@ -168,7 +168,7 @@ def run_aid()->str:
 
 def get_help()-> None:
     # This is the main function that you should run to run the entire program
-    print("Welcome to Get Help. We can help you with your health.")
+    print("Welcome to Health Tracker. We can help you with your health.")
     question = input("Have you ever used our services before? Y or N: ")
     if question == "Y" or question == "y":
         print("Welcome back! :)")
@@ -176,13 +176,13 @@ def get_help()-> None:
     elif question == "N" or question == "n":
         screener()
         # should we just display the menu and then other times we can ask
-        question_two = input("Would you like to see our Menu? Y or N: ")
+        question_two = input("\nWould you like to see our Menu? Y or N: ")
         if question_two == "Y" or question_two == "y":
             menu()
             run_aid()
         elif question_two == "N" or question_two == "n":
             run_aid()
-    final_question = input("Is that all for today? Y or N: ")
+    final_question = input("\nIs that all for today? Y or N: ")
     if final_question == "Y" or final_question == "y":
         print("Have a good day! Come Again! :)")
     elif final_question == "N" or final_question == "n":
@@ -190,4 +190,3 @@ def get_help()-> None:
         # need to enter something here
 
 
-get_help()
