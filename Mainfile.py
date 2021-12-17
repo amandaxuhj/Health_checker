@@ -112,7 +112,7 @@ def check_in()->str:
             q_number = q_number+1
             CIQ = CIQ + 1
     point_total = len(Responses)
-    print("Your score is: ",point_total,"/5")
+    print("Your score is: ",point_total"/5")
     print(" ")    
     if point_total == 0:
         print(":( Please do yourself a favor, take some time and get these things done! We believe in you!!")
@@ -191,10 +191,37 @@ def get_help()-> str:
             run_aid()
     final_question = input("\nIs that all for today? Y or N: ")
     if final_question == "Y" or final_question == "y":
-        print("Have a good day! Come Again! :)")
+        return False # is this how we can do it
     elif final_question == "N" or final_question == "n":
-        print("This is filler for now")
+        return True
+
+
+def get_help_again()-> str:
+    # This is the function that you should run to run the entire program if they want to do more
+    question = input("\nWould you like to see the Menu? Y or N: ")
+    if question == "Y" or question == "y":
+        menu()
+        run_aid()
+    elif question == "N" or question == "n":
+        run_aid()
+    final_question = input("\nIs that all for today? Y or N: ")
+    if final_question == "Y" or final_question == "y":
+        return False # is this how we can do it
+    elif final_question == "N" or final_question == "n":
+        return True
         # need to enter something here
 
-def main_function()->None:
-    get_help()
+
+def main_function()->None:# might need to make another to be the main function
+    first_response = get_help()
+    if first_response == False:
+        print("Have a good day! Come Again! :)")
+    elif first_response == True:
+        Need_help = True
+        while Need_help == True:
+            second_response = get_help_again()
+            if second_response == False:
+                Need_help = False
+            elif second_response == True:
+                Need_help = True
+        print("Have a good day! Come Again! :)")    
