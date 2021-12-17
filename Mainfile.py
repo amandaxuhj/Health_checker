@@ -5,7 +5,7 @@
 import random
 import math
 
-Patient_info = []# A list to hold all the patients information until their next time using this
+Patient_info = []# A list to hold all the patients information until their next time using this program
 
 def water()->str:
     # Tells the user how much water they have left to drink to reach their recommended water intake
