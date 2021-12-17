@@ -1,0 +1,48 @@
+def water()->:
+    question = input("Do you want to use ounces or cups? O or C: ")
+    question_two = input("How much water have you had today: ")
+    if question == "O" or question == "o":
+        wtotaltrue = water_needed()
+        print("You have",wtotaltrue - question_two,"ounces left to drink today.")
+    elif question == "C" or question == "c":
+        wtotal = water_needed()
+        wtotaltrue = wtotal/8
+        print("You have",wtotaltrue - question_two, "cups left to drink today.")
+
+def water_needed()->int:
+    water_wei = Patient_info[3]/2.2
+    if Patient_info[0] < 30:
+        product = water_wei * 40
+        finalnum = product / 28.3
+        return finalnum
+    elif Patient_info[0] >= 30 and Patient_info[0] <= 55:
+        product = water_wei * 35
+        finalnum = product / 28.3
+        return finalnum
+    elif Patient_info[0] > 55:
+        product = water_wei * 30
+        finalnum = product / 28.3
+        return finalnum
+    
+def targets()->:
+    print("Here are your targets that we are basing all our recommendations on:")
+    print(" ")
+
+    water = water_needed()
+    print("Recommended water intake: ", water)
+    print("Recommended calorie intake: ")
+    print(" *For clarification this is the number of calories needed to maintain your current weight")
+    
+    print("Recommended hours of sleep: ")
+    print("")# Do we have any others??
+
+def tsleep()->:
+    # I don't see the need for a function so I might just put this in the target function
+    if Patient_info[0] >= 6 and Patient_info[0] <= 12:
+        print("Recommended hours of sleep: 9-12")
+    elif Patient_info[0] >= 13 and Patient_info[0] <= 18:
+        print("Recommended hours of sleep: 8-10")
+    elif Patient_info[0] > 18 and Patient_info[0] <= 65:
+        print("Recommended hours of sleep: 8+")
+    elif Patient_info[0] > 65:
+        print("Recommended hours of sleep: 7-8")
