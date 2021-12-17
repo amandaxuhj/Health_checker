@@ -221,9 +221,12 @@ def check_in()->str:
         print(":) YOU'RE DOING AMAZING!!! Keep up the great work!!")
 
 
-def affirmation()->str:
-    Affirmation = ["Investing in your health is one of the best investments you can make.", "Please take time to care for your body and health!","A healthy body is always the result of healthy thoughts and feelings.", "Let's work towards a healthier lifestyle! Yout got this!"]
-    print(Affirmation[random.randint(0,3)])    # Don't forget to enter content here
+
+
+def affirmation(x:str)->str:
+    name = x
+    Affirmation = ["Investing in your health is one of the best investments you can make, ", "Please take time to care for your body and health, ","A healthy body is always the result of healthy thoughts and feelings, ", "Let's work towards a healthier lifestyle! Yout got this! Go "]
+    print(Affirmation[random.randint(0,3)], name)   
 
 
 
@@ -249,6 +252,9 @@ def screener()->str:
     Patient_info.append(hei)
     wei = int(input("What is your weight(in pounds): "))
     Patient_info.append(wei)
+    nam = input("What is your name: ")
+    Patient_info.append(nam)
+
     # if we need more we can add it from the other files
 
 def run_aid()->str:
@@ -262,7 +268,7 @@ def run_aid()->str:
     elif Start == "C" or Start == "c":
         check_in()
     elif Start == "A" or Start == "a":
-        affirmation()
+        affirmation(Patient_info[4])
     elif Start == "T" or Start == "t":
         targets()
     # When ready make sure to add the error message
