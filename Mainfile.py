@@ -127,8 +127,6 @@ def affirmation(x:str)->str:
     Affirmation = ["Investing in your health is one of the best investments you can make, ", "Please take time to care for your body and health, ","A healthy body is always the result of healthy thoughts and feelings, ", "Let's work towards a healthier lifestyle! Yout got this! Go "]
     print(Affirmation[random.randint(0,3)], name)    
 
-
-
 def menu()-> str:
     ### This is the list of options available to the user
     print("\nHere is the list of things we can do for you and how to ask for them")
