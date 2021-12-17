@@ -25,7 +25,7 @@ def screener()->str:
     Patient_info.append(wei)
     # if we need more we can add it from the other files
 
-def run_aid()->:
+def run_aid()->str:
     ### This is like a port that will take the user to the service they want to use
     Start = input("What would you like to do today? ")
     if Start == "W" or Start == "w":
@@ -42,22 +42,23 @@ def run_aid()->:
 
 
 def get_help()-> None:
+    # This is the main function that you should run to run the entire program
     print("Welcome to ___. We can help you with your health.")
     question = input("Have you ever used our services before? Y or N")
-    if question == "Y"
+    if question == "Y" or question == "y":
         print("Welcome back! :)")
         run_aid()
-    elif question == "N"
+    elif question == "N" or question == "n":
         screener()
         # should we just display the menu and then other times we can ask
         question_two = input("Would you like to see our Menu? Y or N")
-            if question_two == "Y":
+            if question_two == "Y" or question_two == "y":
                 menu()
-                runaid()
-            elif question_two == "N":
-                runaid()
+                run_aid()
+            elif question_two == "N" or question_two == "n":
+                run_aid()
     final_question = input("Is that all for today? Y or N: ")
-    if final_question == "Y":
+    if final_question == "Y" or final_question == "y":
         print("Have a good day! Come Again! :)")
-    elif final_question == "N":
+    elif final_question == "N" or final_question == "n":
         # need to enter something here
