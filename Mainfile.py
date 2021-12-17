@@ -226,5 +226,5 @@ def main()->None:
                 Need_help = True
         print("Have a good day! Come Again! :)")    
         
-if __name__ == "__main__"
+if __name__ == "__main__":
     main()
