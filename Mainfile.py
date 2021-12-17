@@ -228,5 +228,5 @@ def main()->None:
         print("Have a good day! Come Again! :)")
         Patient_info.clear()  
         
-if __name__ == "__main__"
+if __name__ == "__main__":
     main()
